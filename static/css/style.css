@@ -5,15 +5,27 @@
     font-family: 'Arial Narrow';
 }
 
-
+header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
 
 .barra-nav {
-    padding: 20px;
+    padding: 20px 10px 5px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     background-color: black;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 1);
 }
 
 .navegacion {
@@ -25,12 +37,12 @@
 }
 
 .inicio {
-    background-image: url('../img/cyberpunk.jfif'); 
+    background-image: url('../img/cyberpunk.jfif');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
-    min-height: 100vh;            
-    
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
     padding: 185px;
     display: flex;
     text-align: center;
@@ -44,19 +56,430 @@
 }
 
 .fondo-titulo {
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 30px;
     border-radius: 20px;
 }
 
 .titulo h1 {
-    font-size: 80px;
+    font-size: 70px;
 }
 
 .titulo h2 {
     font-size: 50px;
+    color: #6adaff;
 }
 
 .titulo h3 {
-    font-size: 24px;
+    font-size: 35px;
+}
+
+.sobre-mi-section {
+    padding: 50px 20px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.section-title-container {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.about-container {
+    display: flex;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 18.9px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.about-text p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.skills-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 28px;
+}
+
+.skill-item {
+    width: 100%;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-bar-bg {
+    width: 100%;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    width: 0;
+    background-color: #00BFFF;
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+}
+
+/* ========================================================
+   ESTILOS DE LA BARRA DE NAVEGACIÓN Y SU ANIMACIÓN AL HACER SCROLL
+   ======================================================== */
+
+header {
+    position: relative;
+    z-index: 1000;
+}
+
+.barra {
+    width: 100%;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra hacia abajo estándar */
+}
+
+/* Estado animado de la barra cuando el usuario baja el ratón */
+.barra.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    animation: desplazaraIzquierda 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes desplazaraIzquierda {
+    0% {
+        transform: translateX(50px);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ========================================================
+   ESTILOS PARA LA SECCIÓN "SOBRE MÍ" Y BARRAS DE ESTADÍSTICA
+   ======================================================== */
+
+.sobre-mi-section {
+    position: relative;
+    padding: 50px 20px;
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto en blanco */
+    /* Sombra hacia arriba idéntica a la de la barra pero en dirección opuesta */
+    box-shadow: 0 -20px 30px rgba(0, 0, 0, 0.9);
+    z-index: 10; /* Asegura que la sombra se proyecte sobre la sección anterior */
+}
+
+.section-title-container {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.about-container {
+    display: flex;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Columna Izquierda (Texto) */
+.about-text {
+    flex: 1;
+    font-size: 1.05rem;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.about-text p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Columna Derecha (Barras de Habilidades) */
+.skills-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 28px;
+}
+
+.skill-item {
+    width: 100%;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-bar-bg {
+    width: 100%;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco transparente */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    width: 0;
+    background-color: #00BFFF; /* Color Celeste */
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+}
+
+/* ========================================================
+   ESTILOS GENERALES Y BARRA DE NAVEGACIÓN (HEADER)
+   ======================================================== */
+
+header {
+    position: relative;
+    z-index: 1000;
+}
+
+.barra {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 15px 0;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 1); /* Sombra hacia abajo cargada */
+}
+
+.barra-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+    transition: all 0.4s ease-in-out;
+}
+
+.navegacion {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.navegacion:hover {
+    background-color: #00BFFF;
+    color: #000000;
+    border-color: #00BFFF;
+}
+
+/* ========================================================
+   ESTADO LATERAL DE LA BARRA AL HACER SCROLL (IZQUIERDA)
+   ======================================================== */
+
+.barra.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 10px 0 35px rgba(0, 0, 0, 0.95);
+    animation: slideToLeft 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+.barra.scrolled .barra-nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.barra.scrolled .navegacion {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+@keyframes slideToLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ========================================================
+   ESTILOS PARA LA SECCIÓN "SOBRE MÍ" Y BARRAS DE ESTADÍSTICA
+   ======================================================== */
+
+.sobre-mi-section {
+    position: relative;
+    padding: 80px 20px;
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
+    /* Sombra saturada e intensa proyectada HACIA ARRIBA para el degradado */
+    box-shadow: 0 -35px 45px rgba(0, 0, 0, 1), 0 -15px 25px rgba(0, 0, 0, 0.95);
+    z-index: 10;
+}
+
+.section-title-container {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.about-container {
+    display: flex;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Columna Izquierda (Texto) */
+.about-text {
+    flex: 1;
+    font-size: 1.05rem;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.about-text p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Columna Derecha (Barras de Habilidades) */
+.skills-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 28px;
+}
+
+.skill-item {
+    width: 100%;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-bar-bg {
+    width: 100%;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco transparente */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    width: 0;
+    background-color: #00BFFF; /* Celeste */
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Adaptación responsive */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+    .barra.scrolled {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .barra.scrolled .barra-nav {
+        flex-direction: row;
+        max-height: none;
+    }
 }
