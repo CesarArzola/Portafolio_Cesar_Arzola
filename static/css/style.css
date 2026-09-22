@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Narrow';
+}
+
+
+
+.barra-nav {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: black;
+}
+
+.navegacion {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.inicio {
+    background-image: url('../img/cyberpunk.jfif'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    min-height: 100vh;            
+    
+    padding: 185px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo {
+    color: white;
+}
+
+.fondo-titulo {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.titulo h1 {
+    font-size: 80px;
+}
+
+.titulo h2 {
+    font-size: 50px;
+}
+
+.titulo h3 {
+    font-size: 24px;
+}
